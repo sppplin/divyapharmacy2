@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+
+  --color-green-dark: #1a3a2a;
+  --color-green-mid: #2d5a40;
+  --color-green-light: #4a7c5e;
+  --color-green-pale: #e8f0eb;
+  --color-gold: #b8973a;
+  --color-gold-light: #d4af5a;
+  --color-cream: #faf8f3;
+  --color-cream-dark: #f0ece0;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-gray-900 bg-white;
+  }
+}
+
+.markdown-body h3 {
+  @apply font-serif text-2xl font-semibold text-green-dark mt-8 mb-4 border-b border-gold/20 pb-2;
+}
+
+.markdown-body p {
+  @apply mb-6 leading-relaxed text-gray-700 text-base;
+}
+
+.markdown-body ul {
+  @apply list-none pl-0 mb-8 space-y-3;
+}
+
+.markdown-body li {
+  @apply relative pl-6 before:content-['•'] before:absolute before:left-0 before:text-gold before:font-bold;
+}
+
+.markdown-body strong {
+  @apply text-green-dark font-bold;
+}
+
+.markdown-body img {
+  @apply w-full h-auto rounded-lg shadow-md mb-10 object-cover max-h-[400px];
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
